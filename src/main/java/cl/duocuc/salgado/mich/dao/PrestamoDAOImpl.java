@@ -1,6 +1,6 @@
 package cl.duocuc.salgado.mich.dao;
 
-import cl.duocuc.salgado.mich.util.RutInvalidoException;
+import cl.duocuc.salgado.mich.util.InvalidRutException;
 import cl.duocuc.salgado.mich.model.Categoria;
 import cl.duocuc.salgado.mich.model.Estudiante;
 import cl.duocuc.salgado.mich.model.Libro;
@@ -145,7 +145,7 @@ public class PrestamoDAOImpl implements PrestamoDAO {
                     );
 
                     prestamos.add(prestamo);
-                } catch (RutInvalidoException e) {
+                } catch (InvalidRutException e) {
                     System.out.println("[MYSQL]: RUT inválido en el préstamo #" + rs.getInt("prestamo_id"));
                 }
             }

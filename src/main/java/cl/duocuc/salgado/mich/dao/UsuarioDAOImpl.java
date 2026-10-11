@@ -1,7 +1,7 @@
 package cl.duocuc.salgado.mich.dao;
 
 import cl.duocuc.salgado.mich.enums.Roles;
-import cl.duocuc.salgado.mich.util.RutInvalidoException;
+import cl.duocuc.salgado.mich.util.InvalidRutException;
 import cl.duocuc.salgado.mich.model.PersonaGenerica;
 import cl.duocuc.salgado.mich.model.Rut;
 import cl.duocuc.salgado.mich.model.Usuario;
@@ -171,7 +171,7 @@ public class UsuarioDAOImpl implements UsuarioDAO {
                     rol
             );
 
-        } catch (RutInvalidoException | IllegalArgumentException e) {
+        } catch (InvalidRutException | IllegalArgumentException e) {
             System.out.println("[MYSQL]: No se pudo convertir el usuario #" + rs.getInt("id"));
             return null;
         }

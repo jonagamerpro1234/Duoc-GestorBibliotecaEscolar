@@ -2,7 +2,7 @@ package cl.duocuc.salgado.mich.dao;
 
 import cl.duocuc.salgado.mich.model.Estudiante;
 import cl.duocuc.salgado.mich.model.Rut;
-import cl.duocuc.salgado.mich.util.RutInvalidoException;
+import cl.duocuc.salgado.mich.util.InvalidRutException;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
@@ -82,7 +82,7 @@ public class EstudianteDAOImpl implements EstudianteDAO {
 
                     estudiantes.add(estudiante);
 
-                } catch (RutInvalidoException e) {
+                } catch (InvalidRutException e) {
                     System.out.println(
                             "[MYSQL]: RUT inválido en estudiante #" + rs.getInt("id")
                     );

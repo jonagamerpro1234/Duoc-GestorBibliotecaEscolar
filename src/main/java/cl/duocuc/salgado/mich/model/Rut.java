@@ -1,15 +1,15 @@
 package cl.duocuc.salgado.mich.model;
 
-import cl.duocuc.salgado.mich.util.RutInvalidoException;
+import cl.duocuc.salgado.mich.util.InvalidRutException;
 
 public class Rut {
 
     private final int numero;
     private final char dv;
 
-    public Rut(int numero, char dv) throws RutInvalidoException {
+    public Rut(int numero, char dv) throws InvalidRutException {
         if (numero <= 0) {
-            throw new RutInvalidoException(
+            throw new InvalidRutException(
                     "El número del RUT debe ser mayor que cero."
             );
         }
@@ -17,7 +17,7 @@ public class Rut {
         char dvNormalizado = Character.toUpperCase(dv);
 
         if (!validarDV(numero, dvNormalizado)) {
-            throw new RutInvalidoException(
+            throw new InvalidRutException(
                     "El dígito verificador no corresponde al RUT ingresado."
             );
         }
@@ -34,10 +34,10 @@ public class Rut {
         return dv;
     }
 
-    public static char calcularDV(int numero) throws RutInvalidoException {
+    public static char calcularDV(int numero) throws InvalidRutException {
 
         if (numero <= 0) {
-            throw new RutInvalidoException("El número del RUT debe ser mayor que cero.");
+            throw new InvalidRutException("El número del RUT debe ser mayor que cero.");
         }
 
         int suma = 0;
@@ -69,7 +69,7 @@ public class Rut {
         return (char) ('0' + resultado);
     }
 
-    public static boolean validarDV(int numero, char dv)throws RutInvalidoException {
+    public static boolean validarDV(int numero, char dv)throws InvalidRutException {
         char dvNormalizado = Character.toUpperCase(dv);
         if (dvNormalizado != 'K'&& (dvNormalizado < '0' || dvNormalizado > '9')) {
             return false;
