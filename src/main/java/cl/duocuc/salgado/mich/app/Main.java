@@ -1,6 +1,7 @@
 package cl.duocuc.salgado.mich.app;
 
 import cl.duocuc.salgado.mich.dao.ConexionDB;
+import cl.duocuc.salgado.mich.ui.LoginMenu;
 import cl.duocuc.salgado.mich.ui.Menu;
 
 public class Main {
@@ -10,9 +11,9 @@ public class Main {
 
 
 
-        //Inicio interfaz
-        Menu menu = new Menu();
-        menu.init();
+        //Inicio interfaz login antes que menu
+        LoginMenu loginMenu = new LoginMenu();
+        loginMenu.init();
     }
 
 }
