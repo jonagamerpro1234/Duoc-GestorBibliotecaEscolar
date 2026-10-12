@@ -154,7 +154,7 @@ public class Menu extends JFrame {
             dispose();
 
             // La ventana de acceso se abrirá nuevamente.
-            new LoginMenu().init();
+            new LoginMenu().setVisible(true);
         }
     }
 

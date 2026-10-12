@@ -22,10 +22,6 @@ public class LoginMenu extends JFrame {
         inicializarComponentes();
     }
 
-    public void  init(){
-        setVisible(true);
-    }
-
     private void configurarVentana() {
         setTitle("Gestor de Biblioteca Escolar - Inicio de sesión");
         setSize(420, 300);
